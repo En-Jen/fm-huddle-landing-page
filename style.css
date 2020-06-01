@@ -85,12 +85,13 @@ header img {
     color: hsl(257, 40%, 49%);
     border-radius: 200px;
     font-size: 1.2rem;
+    -webkit-transition: 0.4s;
     transition: 0.4s;
 }
 
 .register-btn:hover,
 .register-btn:active {
-    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
@@ -99,7 +100,11 @@ header img {
 /* ----------------------------------------- */
 
 .social-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
 }
 
@@ -115,8 +120,16 @@ header img {
     border-radius: 50%;
     margin-left: 1rem;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
@@ -148,10 +161,68 @@ header img {
 .attribution-link:link,
 .attribution-link:visited {
     color: #F5AF7F;
+    -webkit-transition: 0.3s;
     transition: 0.3s;
 }
 
 .attribution-link:hover,
 .attribution-link:active {
     color: #EF7EA0;
+}
+
+/* ----------------------------------------- */
+/* MEDIA QUERIES */
+/* ----------------------------------------- */
+
+@media only screen and (max-width: 1127px) {
+
+    html {
+        font-size: 14px;
+    }
+
+    .text-section {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 905px) {
+    
+    main {
+        display: block;
+    }
+
+    body {
+        background-color: hsl(257, 40%, 49%);
+        background-image: url(./images/bg-mobile.svg);
+        background-size: auto;
+        background-repeat: no-repeat;
+        padding: 3rem 3rem;
+    }
+
+    .text-section {
+        text-align: center;
+        margin: 4rem 0 5rem 0;
+    }
+
+    .social-links {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 570px) {
+
+    html {
+        font-size: 12px;
+    }
+
+    header img {
+        width: 11rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
 }
